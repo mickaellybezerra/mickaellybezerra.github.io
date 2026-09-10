@@ -3,110 +3,1256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mickaelly Bezerra | Biomechanics</title>
+
+    <title>Mickaelly Bezerra | Human Movement & Biomechanics</title>
+
+    <meta name="description" content="Mickaelly Bezerra — Physiotherapist, PhD Researcher and Biomechanics researcher working across human movement, motion capture, data and computational analysis.">
 
     <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f7f7f5;
-            color: #171717;
-            line-height: 1.6;
+        html {
+            scroll-behavior: smooth;
         }
 
-        .hero {
-            min-height: 100vh;
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f2;
+            color: #111;
+            line-height: 1.5;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 8vw;
-            max-width: 1400px;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 24px 5vw;
+
+            background: rgba(245,245,242,0.88);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .nav-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            opacity: 0.55;
+            transition: opacity 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        section {
+            padding: 10vw 7vw;
+            max-width: 1500px;
             margin: auto;
         }
 
         .eyebrow {
-            font-size: 0.85rem;
+            font-size: 0.75rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            margin-bottom: 2rem;
-            color: #666;
+            color: #777;
+            margin-bottom: 30px;
         }
 
-        h1 {
-            font-size: clamp(3.5rem, 9vw, 8rem);
+        .section-number {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: clamp(2.8rem, 6vw, 6.5rem);
             line-height: 0.95;
+            letter-spacing: -0.055em;
             font-weight: 600;
-            max-width: 1000px;
-            letter-spacing: -0.05em;
         }
 
-        .statement {
-            font-size: clamp(1.3rem, 2.5vw, 2rem);
-            max-width: 720px;
-            margin-top: 3rem;
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            padding: 150px 7vw 80px;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+        }
+
+        .hero h1 {
+            font-size: clamp(4rem, 10vw, 10rem);
+            line-height: 0.87;
+            letter-spacing: -0.07em;
+            font-weight: 600;
+            max-width: 1100px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+            margin-top: 55px;
+
+            font-size: clamp(1.2rem, 2vw, 1.7rem);
             color: #444;
         }
 
-        .tags {
+        .hero-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.7rem;
-            margin-top: 3rem;
+            gap: 10px;
+            margin-top: 35px;
         }
 
-        .tag {
+        .pill {
             border: 1px solid #bbb;
-            border-radius: 100px;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .hero-bottom {
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            max-width: 1100px;
         }
 
         .scroll {
-            margin-top: 8rem;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #777;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: #111;
+            color: #f5f5f2;
+            max-width: none;
+        }
+
+        .about-inner {
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .about .eyebrow,
+        .about .section-number {
+            color: #999;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 10vw;
+            margin-top: 80px;
+        }
+
+        .about-lead {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            line-height: 1.15;
+        }
+
+        .about-text {
+            max-width: 650px;
+            font-size: 1.05rem;
+            color: #bbb;
+        }
+
+        .about-text p + p {
+            margin-top: 25px;
+        }
+
+        /* =========================
+           PIPELINE
+        ========================= */
+
+        .pipeline {
+            background: #e8e8e3;
+            max-width: none;
+        }
+
+        .pipeline-inner {
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .pipeline-title {
+            max-width: 1000px;
+        }
+
+        .pipeline-title span {
+            color: #777;
+        }
+
+        .pipeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: #aaa;
+            margin-top: 90px;
+            border: 1px solid #aaa;
+        }
+
+        .pipeline-card {
+            background: #e8e8e3;
+            min-height: 300px;
+            padding: 35px;
+            transition: all 0.3s ease;
+        }
+
+        .pipeline-card:hover {
+            background: #111;
+            color: white;
+            transform: translateY(-8px);
+        }
+
+        .pipeline-card .number {
+            font-size: 0.7rem;
+            color: #888;
             letter-spacing: 0.15em;
+        }
+
+        .pipeline-card h3 {
+            font-size: 2rem;
+            margin: 70px 0 15px;
+            letter-spacing: -0.04em;
+        }
+
+        .pipeline-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .pipeline-card:hover p {
+            color: #aaa;
+        }
+
+        .pipeline-end {
+            text-align: center;
+            margin-top: 70px;
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            letter-spacing: -0.03em;
+        }
+
+        /* =========================
+           TOOLBOX
+        ========================= */
+
+        .toolbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin-top: 80px;
+            border-top: 1px solid #bbb;
+        }
+
+        .tool-group {
+            padding: 35px 0;
+            border-bottom: 1px solid #bbb;
+        }
+
+        .tool-group h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .tool-list {
+            font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+            letter-spacing: -0.03em;
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            background: #111;
+            color: #f5f5f2;
+            max-width: none;
+        }
+
+        .projects-inner {
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .projects .eyebrow,
+        .projects .section-number {
+            color: #999;
+        }
+
+        .project-list {
+            margin-top: 80px;
+        }
+
+        .project {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr;
+            gap: 30px;
+
+            padding: 50px 0;
+            border-top: 1px solid #333;
+
+            transition: padding 0.3s ease;
+        }
+
+        .project:last-child {
+            border-bottom: 1px solid #333;
+        }
+
+        .project:hover {
+            padding-left: 20px;
+        }
+
+        .project-number {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .project h3 {
+            font-size: clamp(2rem, 4vw, 4rem);
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+        }
+
+        .project-info {
+            color: #aaa;
+            max-width: 500px;
+        }
+
+        .project-tags {
+            margin-top: 25px;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: #777;
         }
+
+        /* =========================
+           TROUBLESHOOTING
+        ========================= */
+
+        .troubleshooting {
+            background: #dcdcd7;
+            max-width: none;
+        }
+
+        .troubleshooting-inner {
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .trouble-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: #999;
+            margin-top: 80px;
+        }
+
+        .trouble-card {
+            background: #dcdcd7;
+            padding: 40px;
+            min-height: 330px;
+        }
+
+        .trouble-card .number {
+            font-size: 0.7rem;
+            color: #777;
+            letter-spacing: 0.15em;
+        }
+
+        .trouble-card h3 {
+            font-size: 1.7rem;
+            line-height: 1;
+            margin: 70px 0 20px;
+            letter-spacing: -0.04em;
+        }
+
+        .trouble-card p {
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        /* =========================
+           RESEARCH
+        ========================= */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10vw;
+            margin-top: 80px;
+        }
+
+        .research-question {
+            font-size: clamp(2rem, 4vw, 4rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+        }
+
+        .research-description {
+            color: #555;
+            max-width: 600px;
+        }
+
+        .research-description p + p {
+            margin-top: 25px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #111;
+            color: #f5f5f2;
+            max-width: none;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-inner {
+            width: 100%;
+            max-width: 1500px;
+            margin: auto;
+        }
+
+        .contact h2 {
+            max-width: 900px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 60px;
+        }
+
+        .contact-link {
+            border: 1px solid #555;
+            padding: 13px 22px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.25s ease;
+        }
+
+        .contact-link:hover {
+            background: #f5f5f2;
+            color: #111;
+        }
+
+        footer {
+            background: #111;
+            color: #666;
+            border-top: 1px solid #333;
+            padding: 25px 7vw;
+            font-size: 0.7rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            section {
+                padding: 20vw 7vw;
+            }
+
+            .hero {
+                padding: 140px 7vw 70px;
+            }
+
+            .hero h1 {
+                font-size: clamp(3.4rem, 15vw, 7rem);
+            }
+
+            .about-grid,
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .pipeline-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .toolbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                grid-template-columns: 50px 1fr;
+            }
+
+            .project-info {
+                grid-column: 2;
+            }
+
+            .trouble-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .pipeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-meta {
+                gap: 6px;
+            }
+
+            .pill {
+                font-size: 0.65rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <main class="hero">
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <a href="#top" class="nav-name">
+            Mickaelly Bezerra
+        </a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#expertise">Expertise</a>
+            <a href="#work">Work</a>
+            <a href="#research">Research</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <header class="hero" id="top">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                Physiotherapist · PhD Researcher · Biomechanics
+            </div>
+
+            <h1>
+                Understanding<br>
+                human movement<br>
+                through data.
+            </h1>
+
+            <p class="hero-description">
+                I work at the intersection of human movement, biomechanics
+                and computational analysis — from motion capture and force
+                measurement to data processing, validation and interpretation.
+            </p>
+
+            <div class="hero-meta">
+
+                <span class="pill">Motion Capture</span>
+                <span class="pill">Biomechanics</span>
+                <span class="pill">OpenSim</span>
+                <span class="pill">Data</span>
+                <span class="pill">Validation</span>
+
+            </div>
+
+            <div class="hero-bottom">
+
+                <div class="scroll">
+                    ↓ Explore my work
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section class="about" id="about">
+
+        <div class="about-inner">
+
+            <div class="section-number">01 — ABOUT</div>
+
+            <div class="eyebrow">
+                Human movement comes first.
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-lead">
+
+                    The phenomenon I study is not the data.
+
+                    <br><br>
+
+                    <strong>It is human movement.</strong>
+
+                </div>
+
+                <div class="about-text">
+
+                    <p>
+                        I am a physiotherapist and PhD researcher in
+                        Rehabilitation Sciences, working with human movement
+                        through a biomechanical and computational perspective.
+                    </p>
+
+                    <p>
+                        My background in physiotherapy shapes the way I
+                        approach movement: not simply as a collection of
+                        signals, but as a representation of how the human
+                        body moves, adapts and produces mechanical responses.
+                    </p>
+
+                    <p>
+                        I work across clinical reasoning, experimental
+                        measurement, biomechanical modelling, computational
+                        analysis and interpretation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PIPELINE
+    ========================= -->
+
+    <section class="pipeline" id="expertise">
+
+        <div class="pipeline-inner">
+
+            <div class="section-number">02 — THE PIPELINE</div>
+
+            <div class="eyebrow">
+                From movement to data — and back to movement.
+            </div>
+
+            <h2 class="pipeline-title">
+                Four stages.<br>
+                <span>One biomechanical question.</span>
+            </h2>
+
+
+            <div class="pipeline-grid">
+
+                <div class="pipeline-card">
+
+                    <div class="number">01 — CAPTURE</div>
+
+                    <h3>Capture</h3>
+
+                    <p>
+                        3D motion capture, force measurement,
+                        electromyography and plantar pressure.
+                    </p>
+
+                </div>
+
+
+                <div class="pipeline-card">
+
+                    <div class="number">02 — PROCESS</div>
+
+                    <h3>Process</h3>
+
+                    <p>
+                        Kinematics, kinetics, signal processing,
+                        data transformation and automation.
+                    </p>
+
+                </div>
+
+
+                <div class="pipeline-card">
+
+                    <div class="number">03 — MODEL</div>
+
+                    <h3>Model</h3>
+
+                    <p>
+                        Biomechanical analysis, musculoskeletal modelling
+                        and OpenSim-based simulation.
+                    </p>
+
+                </div>
+
+
+                <div class="pipeline-card">
+
+                    <div class="number">04 — VALIDATE</div>
+
+                    <h3>Validate</h3>
+
+                    <p>
+                        Error analysis, quality control, troubleshooting
+                        and reproducible computational workflows.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="pipeline-end">
+                Data → biomechanics → understanding.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         TOOLBOX
+    ========================= -->
+
+    <section>
+
+        <div class="section-number">03 — TOOLBOX</div>
 
         <div class="eyebrow">
-            Physiotherapist · PhD Researcher · Biomechanics
+            Technologies I work with
         </div>
 
-        <h1>
-            Understanding human movement through biomechanics, technology and data.
-        </h1>
+        <h2>
+            Tools are<br>
+            means, not the goal.
+        </h2>
 
-        <p class="statement">
-            I work at the intersection of human movement, biomechanics and
-            computational analysis — from motion capture and force measurement
-            to data processing, validation and interpretation.
-        </p>
 
-        <div class="tags">
-            <span class="tag">Motion Capture</span>
-            <span class="tag">Biomechanics</span>
-            <span class="tag">OpenSim</span>
-            <span class="tag">Data Processing</span>
-            <span class="tag">Quality Control</span>
+        <div class="toolbox-grid">
+
+            <div class="tool-group">
+
+                <h3>Motion Capture</h3>
+
+                <div class="tool-list">
+                    Qualisys · Vicon · Noraxon
+                </div>
+
+            </div>
+
+
+            <div class="tool-group">
+
+                <h3>Force Measurement</h3>
+
+                <div class="tool-list">
+                    AMTI · Bertec
+                </div>
+
+            </div>
+
+
+            <div class="tool-group">
+
+                <h3>Biomechanical Analysis</h3>
+
+                <div class="tool-list">
+                    OpenSim · Visual3D
+                </div>
+
+            </div>
+
+
+            <div class="tool-group">
+
+                <h3>Programming & Data</h3>
+
+                <div class="tool-list">
+                    Python · MATLAB · Google Colab · PyCharm
+                </div>
+
+            </div>
+
+
+            <div class="tool-group">
+
+                <h3>Data Formats</h3>
+
+                <div class="tool-list">
+                    TRC · C3D · MOT · STO · CSV · XLS · OSIM
+                </div>
+
+            </div>
+
+
+            <div class="tool-group">
+
+                <h3>Working Approach</h3>
+
+                <div class="tool-list">
+                    Validation · Automation · Troubleshooting
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="scroll">
-            ↓ Explore my work
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section class="projects" id="work">
+
+        <div class="projects-inner">
+
+            <div class="section-number">04 — SELECTED WORK</div>
+
+            <div class="eyebrow">
+                Research · Development · Problem solving
+            </div>
+
+            <h2>
+                Work built<br>
+                around real questions.
+            </h2>
+
+
+            <div class="project-list">
+
+
+                <!-- PROJECT 01 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            OpenSim<br>
+                            Validation<br>
+                            Workflow
+                        </h3>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <p>
+                            Developing a Python-based workflow to support
+                            automated quality control and validation of
+                            biomechanical outputs.
+                        </p>
+
+                        <div class="project-tags">
+                            Python · OpenSim · Data validation · Research software
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Motion Capture<br>
+                            & Force Data
+                        </h3>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <p>
+                            Working across experimental acquisition,
+                            processing and interpretation of 3D kinematic
+                            and kinetic data.
+                        </p>
+
+                        <div class="project-tags">
+                            Qualisys · Vicon · AMTI · Bertec · Visual3D
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="project">
+
+                    <div class="project-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Induced<br>
+                            Acceleration<br>
+                            Analysis
+                        </h3>
+
+                    </div>
+
+                    <div class="project-info">
+
+                        <p>
+                            Investigating how joint moments contribute to
+                            the acceleration of lower-limb segments during
+                            running using OpenSim-based analysis.
+                        </p>
+
+                        <div class="project-tags">
+                            OpenSim · Running biomechanics · MATLAB · Python
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
         </div>
 
-    </main>
+    </section>
+
+
+    <!-- =========================
+         TROUBLESHOOTING
+    ========================= -->
+
+    <section class="troubleshooting">
+
+        <div class="troubleshooting-inner">
+
+            <div class="section-number">05 — TROUBLESHOOTING</div>
+
+            <div class="eyebrow">
+                When the pipeline breaks.
+            </div>
+
+            <h2>
+                I investigate<br>
+                before I give up.
+            </h2>
+
+
+            <div class="trouble-grid">
+
+
+                <article class="trouble-card">
+
+                    <div class="number">
+                        01
+                    </div>
+
+                    <h3>
+                        Multiple ground<br>
+                        reaction forces
+                    </h3>
+
+                    <p>
+                        Developed workflows to visualize and process
+                        multiple force-plate signals and multiple ground
+                        reactions acting on a single foot.
+                    </p>
+
+                </article>
+
+
+                <article class="trouble-card">
+
+                    <div class="number">
+                        02
+                    </div>
+
+                    <h3>
+                        Biomechanical<br>
+                        visualization
+                    </h3>
+
+                    <p>
+                        Developed computational tools to streamline the
+                        visualization, inspection and processing of
+                        biomechanical datasets.
+                    </p>
+
+                </article>
+
+
+                <article class="trouble-card">
+
+                    <div class="number">
+                        03
+                    </div>
+
+                    <h3>
+                        Induced acceleration<br>
+                        pipeline
+                    </h3>
+
+                    <p>
+                        Built a workflow for processing, integrating and
+                        interpreting induced acceleration contributions
+                        in OpenSim.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RESEARCH
+    ========================= -->
+
+    <section id="research">
+
+        <div class="section-number">06 — RESEARCH</div>
+
+        <div class="eyebrow">
+            PhD · Rehabilitation Sciences · Human Movement
+        </div>
+
+        <h2>
+            Asking mechanical<br>
+            questions about<br>
+            human movement.
+        </h2>
+
+
+        <div class="research-grid">
+
+            <div class="research-question">
+
+                How does the<br>
+                foot contribute<br>
+                to movement?
+
+            </div>
+
+
+            <div class="research-description">
+
+                <p>
+                    My doctoral research investigates the biomechanical
+                    contribution of the midfoot to body acceleration during
+                    walking and running.
+                </p>
+
+                <p>
+                    My work combines motion capture, force measurement,
+                    biomechanical modelling and computational analysis to
+                    understand how local joint mechanics can influence
+                    movement at a distance.
+                </p>
+
+                <p>
+                    This research reflects the broader question that guides
+                    my work: how can technology and biomechanics help us
+                    better understand human movement?
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section class="contact" id="contact">
+
+        <div class="contact-inner">
+
+            <div class="section-number">
+                07 — CONTACT
+            </div>
+
+            <div class="eyebrow">
+                Let's talk biomechanics.
+            </div>
+
+            <h2>
+                Interested in<br>
+                human movement,<br>
+                data and what<br>
+                comes next?
+            </h2>
+
+
+            <div class="contact-links">
+
+                <a
+                    class="contact-link"
+                    href="https://github.com/mickaellybezerra"
+                    target="_blank">
+                    GitHub
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="#"
+                    target="_blank">
+                    LinkedIn
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="#"
+                    target="_blank">
+                    CV
+                </a>
+
+                <a
+                    class="contact-link"
+                    href="mailto:YOUR_EMAIL_HERE">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <span>
+            © 2026 Mickaelly Bezerra
+        </span>
+
+        <span>
+            Human Movement · Biomechanics · Data
+        </span>
+
+    </footer>
+
 
 </body>
 </html>
