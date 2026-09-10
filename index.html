@@ -219,43 +219,41 @@
         }
 
         .about-inner {
-            max-width: 1500px;
-            margin: auto;
-        }
-        .about-image {
-            width: 280px;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-            margin-bottom: 60px;
-        }
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 70px;
+    align-items: start;
+    }
 
-        .about .eyebrow,
-        .about .section-number {
-            color: #999;
-        }
+    .about-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            gap: 10vw;
-            margin-top: 80px;
-        }
-
-        .about-lead {
-            font-size: clamp(1.5rem, 3vw, 3rem);
-            line-height: 1.15;
-        }
-
-        .about-text {
-            max-width: 650px;
-            font-size: 1.05rem;
-            color: #bbb;
-        }
-
-        .about-text p + p {
-            margin-top: 25px;
-        }
+    .about-content {
+        width: 100%;
+    }
+    
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        margin-top: 70px;
+    }
+    
+    .about-lead {
+        font-size: 2.8rem;
+        line-height: 1.05;
+    }
+    
+    .about-lead strong {
+        font-weight: 700;
+    }
+    
+    .about-text {
+        max-width: 650px;
+    }                    
         .presentation-photo {
             display: flex;
             justify-content: center;
@@ -744,22 +742,27 @@
 
     <section class="about" id="about">
 
-        <div class="about-inner">
+    <div class="about-inner">
+
+        <div class="about-photo">
             <img src="me.jpg"
-             alt="Mickaelly Bezerra"
-             class="about-image">
+                 alt="Mickaelly Bezerra">
+        </div>
+
+        <div class="about-content">
 
             <div class="section-number">01 — ABOUT</div>
 
             <div class="eyebrow">
-                Human movement comes first.
+                HUMAN MOVEMENT COMES FIRST.
             </div>
 
             <div class="about-grid">
 
                 <div class="about-lead">
 
-                    The phenomenon I study is not the data.
+                    The phenomenon I study
+                    is not the data.
 
                     <br><br>
 
@@ -793,6 +796,8 @@
             </div>
 
         </div>
+
+    </div>
 
     </section>
 
