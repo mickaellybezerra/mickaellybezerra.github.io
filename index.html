@@ -41,15 +41,38 @@
         ========================= */
         
         nav {
-            ...
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        
+            padding: 24px 5vw;
+        
+            background: rgba(245,245,242,0.88);
+            backdrop-filter: blur(12px);
+        
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            box-sizing: border-box;
         }
         
         .nav-name {
-            ...
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
         
         .nav-links {
-            ...
+            display: flex;
+            gap: 28px;
+            font-size: 0.78rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
         
         .nav-links a {
@@ -57,22 +80,27 @@
             transition: opacity 0.25s ease;
         }
         
+        /* ABOUT — azul */
         .nav-links a:nth-child(1) {
             color: #2F65B0;
         }
         
+        /* EXPERTISE — verde */
         .nav-links a:nth-child(2) {
             color: #4B9F70;
         }
         
+        /* WORK — azul */
         .nav-links a:nth-child(3) {
             color: #2F65B0;
         }
         
+        /* RESEARCH — verde */
         .nav-links a:nth-child(4) {
             color: #4B9F70;
         }
         
+        /* CONTACT — azul */
         .nav-links a:nth-child(5) {
             color: #2F65B0;
         }
@@ -80,7 +108,6 @@
         .nav-links a:hover {
             opacity: 0.65;
         }
-
         /* =========================
            GENERAL
         ========================= */
