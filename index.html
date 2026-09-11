@@ -327,6 +327,33 @@
             letter-spacing: -0.03em;
         }
 
+        .pipeline-step:nth-child(1) {
+            --step-color: #2457A6;
+        }
+        
+        .pipeline-step:nth-child(2) {
+            --step-color: #3478C7;
+        }
+        
+        .pipeline-step:nth-child(3) {
+            --step-color: #299A91;
+        }
+        
+        .pipeline-step:nth-child(4) {
+            --step-color: #4FAF73;
+        }
+
+        .pipeline-step .step-number {
+            color: var(--step-color);
+        }
+        
+        .pipeline-step h3 {
+            color: var(--step-color);
+        }
+        
+        .pipeline-step:hover {
+            border-color: var(--step-color);
+        }
         /* =========================
            TOOLBOX
         ========================= */
