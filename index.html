@@ -299,6 +299,11 @@
             transform: translateY(-8px);
         }
 
+        .pipeline-card:hover .number,
+        .pipeline-card:hover h3 {
+            color: var(--pipeline-color);
+        }
+
         .pipeline-card .number {
             font-size: 0.7rem;
             color: #888;
@@ -326,33 +331,37 @@
             font-size: clamp(1.5rem, 3vw, 3rem);
             letter-spacing: -0.03em;
         }
-
-        .pipeline-step:nth-child(1) {
-            --step-color: #2457A6;
+        /* =========================
+           PIPELINE — CORES
+        ========================= */
+        
+        .pipeline-card:nth-child(1) {
+            --pipeline-color: #2F65B0;
         }
         
-        .pipeline-step:nth-child(2) {
-            --step-color: #3478C7;
+        .pipeline-card:nth-child(2) {
+            --pipeline-color: #347FBF;
         }
         
-        .pipeline-step:nth-child(3) {
-            --step-color: #299A91;
+        .pipeline-card:nth-child(3) {
+            --pipeline-color: #2F9A91;
         }
         
-        .pipeline-step:nth-child(4) {
-            --step-color: #4FAF73;
-        }
-
-        .pipeline-step .step-number {
-            color: var(--step-color);
+        .pipeline-card:nth-child(4) {
+            --pipeline-color: #4B9F70;
         }
         
-        .pipeline-step h3 {
-            color: var(--step-color);
+        .pipeline-card .number,
+        .pipeline-card h3 {
+            color: var(--pipeline-color);
         }
         
-        .pipeline-step:hover {
-            border-color: var(--step-color);
+        .pipeline-card:hover .number,
+        .pipeline-card:hover h3 {
+            color: var(--pipeline-color);
+        }
+        .pipeline-card {
+            border-top: 4px solid var(--pipeline-color);
         }
         /* =========================
            TOOLBOX
